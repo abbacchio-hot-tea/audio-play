@@ -1,262 +1,334 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>会議川柳 受賞作品</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>会議川柳 受賞作品</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
-  background-image: url("senryu_background.png");
-  background-repeat: repeat;
-  background-attachment: fixed;
-}
+  <style>
+    body{
+      margin:0;
+      font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
+      background-image:url("senryu_background.png");
+      background-repeat:repeat;
+      background-attachment:fixed;
+    }
 
-.wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
+    .wrapper{
+      max-width:900px;
+      margin:0 auto;
+      padding:20px;
+    }
 
-h1 {
-  text-align: center;
-}
+    h1{ text-align:center; margin: 0 0 24px; }
 
-/* 共通ブロック */
-.piece {
-  margin-bottom: 40px;
-  text-align: center;
-}
+    .piece{
+      margin: 0 0 40px;
+      text-align:center;
+    }
 
-.senryu-block span {
-  display: block;
-}
+    .senryu-block span{ display:block; }
 
-.award-title {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
+    .award-title{
+      font-weight:700;
+      margin-bottom:4px;
+    }
 
-.senryu-main {
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 4px;
-  transition: color 0.3s ease;
-}
+    .senryu-main{
+      font-weight:700;
+      text-align:center;
+      margin-bottom:4px;
+      transition: color 0.3s ease;
+    }
 
-.senryu-main.is-playing {
-  color: #d94a1e;
-}
+    .senryu-main.is-playing{
+      color:#d94a1e;
+    }
 
-.senryu-author {
-  font-size: 0.95em;
-}
+    .senryu-author{
+      font-size:0.95em;
+      font-weight:700; /* Payなど太字にしたい場合 */
+    }
 
-/* イラスト */
-.senryu-illust {
-  display: block;
-  width: 20%;
-  height: auto;
-  margin: 0 auto 12px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .senryu-illust{
+      display:block;
+      width:20%;
+      height:auto;
+      margin:0 auto 12px;
+      border-radius:8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.senryu-illust.is-playing {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(30,111,217,0.6);
-}
+    .senryu-illust.is-playing{
+      transform:scale(1.1);
+      box-shadow:0 0 20px rgba(30,111,217,0.6);
+    }
 
-/* audio 中央 */
-audio {
-  display: block;
-  margin: 12px auto;
-}
-</style>
+    audio{
+      display:block;
+      margin:12px auto 0;
+      width:260px;
+      max-width:100%;
+    }
+
+    .note{
+      text-align:center;
+      margin: 8px 0 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrapper">
-<h1>会議川柳 受賞作品</h1>
-<script>
-const senryuData = [
-  <!-- 001 -->
-　<h2 class="senryu-block">
-  　  <img
-      src="001_senryu_illust.png"
-      alt="大賞【小沼賞】それいいね　その一声が　場を変える"
-      class="senryu-illust"
-    >
-    <span class="award-title">大賞【小沼賞】
-  　<span class="senryu-main">それいいね　その一声が　場を変える
-  　<span class="senryu-author">Pay
-　</h2>
-  <audio id="audio-001" controls preload="auto">
-    <source src="001_senryu.mp3" type="audio/mpeg" />
-  </audio>
+  <div class="wrapper">
+    <h1>会議川柳 受賞作品</h1>
 
-  <!-- 002 -->
-　<h2 class="senryu-block">
-  　  <img
-      src="002_senryu_illust.png"
-      alt="大賞【働き方改革賞】この会議　私必要？　地蔵時間"
-      class="senryu-illust"
-    >
-    <span class="award-title">大賞【働き方改革賞】
-  　<span class="senryu-main">この会議　私必要？　地蔵時間
-  　<span class="senryu-author">伊藤純
-　</h2>
-  <audio id="audio-001" controls preload="auto">
-    <source src="002_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 001 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <img src="001_senryu_illust.png" class="senryu-illust" alt="大賞【小沼賞】それいいね　その一声が　場を変える">
+        <span class="award-title">大賞【小沼賞】</span>
+        <span class="senryu-main">それいいね　その一声が　場を変える</span>
+        <span class="senryu-author">PN:Pay</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="001_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 003 -->
-　<h2 class="senryu-block">
-  　  <img
-      src="003_senryu_illust.png"
-      alt="優秀賞【特別アクション賞①】延長を　笑顔で断つは　締め名人"
-      class="senryu-illust"
-    >
-    <span class="award-title">優秀賞【特別アクション賞①】
-  　<span class="senryu-main">延長を　笑顔で断つは　締め名人
-  　<span class="senryu-author">業革のラーメンヲタ
-　</h2>
-  <audio id="audio-001" controls preload="auto">
-    <source src="003_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 002 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <img src="002_senryu_illust.png" class="senryu-illust" alt="大賞【働き方改革賞】この会議　私必要？　地蔵時間">
+        <span class="award-title">大賞【働き方改革賞】</span>
+        <span class="senryu-main">この会議　私必要？　地蔵時間</span>
+        <span class="senryu-author">PN:伊藤純</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="002_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 004 -->
-  <h2>優秀賞【特別アクション賞②】うなずきが　意見引き出す　潤滑剤　PN:K</h2>
-  <audio controls preload="auto">
-    <source src="004_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 003 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <img src="003_senryu_illust.png" class="senryu-illust" alt="優秀賞【特別アクション賞①】延長を　笑顔で断つは　締め名人">
+        <span class="award-title">優秀賞【特別アクション賞①】</span>
+        <span class="senryu-main">延長を　笑顔で断つは　締め名人</span>
+        <span class="senryu-author">PN:業革のラーメンヲタ</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="003_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 005 -->
-  <h2>優秀賞【特別アクション賞③】会議では　発言ことが　成長へ　PN:松ちゃん</h2>
-  <audio controls preload="auto">
-    <source src="005_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 004 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <img src="004_senryu_illust.png" class="senryu-illust" alt="優秀賞【特別アクション賞②】うなずきが　意見引き出す　潤滑剤">
+        <span class="award-title">優秀賞【特別アクション賞②】</span>
+        <span class="senryu-main">うなずきが　意見引き出す　潤滑剤</span>
+        <span class="senryu-author">PN:K</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="004_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 006 -->
-  <h2>優秀賞【改善賞】会議前　アジェンダ作って　皆すっきり　PN:タイパ希望之助</h2>
-  <audio controls preload="auto">
-    <source src="006_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 005 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <img src="005_senryu_illust.png" class="senryu-illust" alt="優秀賞【特別アクション賞③】会議では　発言ことが　成長へ">
+        <span class="award-title">優秀賞【特別アクション賞③】</span>
+        <span class="senryu-main">会議では　発言ことが　成長へ</span>
+        <span class="senryu-author">PN:松ちゃん</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="005_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 007 -->
-  <h2>【モモっと賞】良案を　提示で帰る　みな定時　PN:小林　正則</h2>
-  <audio controls preload="auto">
-    <source src="007_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 006 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <img src="006_senryu_illust.png" class="senryu-illust" alt="優秀賞【改善賞】会議前　アジェンダ作って　皆すっきり">
+        <span class="award-title">優秀賞【改善賞】</span>
+        <span class="senryu-main">会議前　アジェンダ作って　皆すっきり</span>
+        <span class="senryu-author">PN:タイパ希望之助</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="006_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 008 -->
-  <h2>【クスッとのき賞】打合せ　議題は次の　打合　PN:定時ダッシュ</h2>
-  <audio controls preload="auto">
-    <source src="008_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 007 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【モモっと賞】</span>
+        <span class="senryu-main">良案を　提示で帰る　みな定時</span>
+        <span class="senryu-author">PN:小林　正則</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="007_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 009 -->
-  <h2>【Our100th賞】イマイチと　言うなら出そう　代替案　PN:事務局のひとりごと</h2>
-  <audio controls preload="auto">
-    <source src="009_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 008 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【クスッとのき賞】</span>
+        <span class="senryu-main">打合せ　議題は次の　打合</span>
+        <span class="senryu-author">PN:定時ダッシュ</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="008_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 010 -->
-  <h2>【ルーキー賞】共鳴は　沈黙の中　芽吹く声　PN:秦幹太郎</h2>
-  <audio controls preload="auto">
-    <source src="010_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 009 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【Our100th賞】</span>
+        <span class="senryu-main">イマイチと　言うなら出そう　代替案</span>
+        <span class="senryu-author">PN:事務局のひとりごと</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="009_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 011 -->
-  <h2>【一番早いで賞】長いのに　簡単ですが　以上です　PN:アンディ・ラウ</h2>
-  <audio controls preload="auto">
-    <source src="011_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 010 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【ルーキー賞】</span>
+        <span class="senryu-main">共鳴は　沈黙の中　芽吹く声</span>
+        <span class="senryu-author">PN:秦幹太郎</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="010_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 012 -->
-  <h2>【ラストワン賞】皆やる気　話まとまる　しかいよし　PN:おーいはにまる</h2>
-  <audio controls preload="auto">
-    <source src="012_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 011 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【一番早いで賞】</span>
+        <span class="senryu-main">長いのに　簡単ですが　以上です</span>
+        <span class="senryu-author">PN:アンディ・ラウ</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="011_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 013 -->
-  <h2>【言葉の魔術師賞】ニッチです　ニュー言語が　認っ知です　PN:ＣＯＯ</h2>
-  <audio controls preload="auto">
-    <source src="013_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 012 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【ラストワン賞】</span>
+        <span class="senryu-main">皆やる気　話まとまる　しかいよし</span>
+        <span class="senryu-author">PN:おーいはにまる</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="012_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 014 -->
-  <h2>【想いが伝わったで賞】所要時間　守ってくれて　ありがとね！　PN:司会ザッキー</h2>
-  <audio controls preload="auto">
-    <source src="014_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 013 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【言葉の魔術師賞】</span>
+        <span class="senryu-main">ニッチです　ニュー言語が　認っ知です</span>
+        <span class="senryu-author">PN:ＣＯＯ</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="013_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 015 -->
-  <h2>【共感できるで賞】助かるよ　クリック一つの　意思表示　PN:緑湘酔人</h2>
-  <audio controls preload="auto">
-    <source src="015_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 014 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【想いが伝わったで賞】</span>
+        <span class="senryu-main">所要時間　守ってくれて　ありがとね！</span>
+        <span class="senryu-author">PN:司会ザッキー</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="014_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 016 -->
-  <h2>【これはダメで賞】打ち合わせ　会話はいつも　にてらごし　PN:たかあき</h2>
-  <audio controls preload="auto">
-    <source src="016_senryu.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- 015 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【共感できるで賞】</span>
+        <span class="senryu-main">助かるよ　クリック一つの　意思表示</span>
+        <span class="senryu-author">PN:緑湘酔人</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="015_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-  <!-- 017 -->
-  <h2>【会議PJメンバー賞】「飽き」深き　隣は何を　する人ぞ　PN:松尾芭蕉界隈</h2>
-  <audio controls preload="auto">
-    <source src="017_senryu.mp3" type="audio/mpeg" />
-  </audio>
-];
+    <!-- 016 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【これはダメで賞】</span>
+        <span class="senryu-main">打ち合わせ　会話はいつも　にてらごし</span>
+        <span class="senryu-author">PN:たかあき</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="016_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-const container = document.currentScript.parentElement;
+    <!-- 017 -->
+    <section class="piece">
+      <h2 class="senryu-block">
+        <span class="award-title">【会議PJメンバー賞】</span>
+        <span class="senryu-main">「飽き」深き　隣は何を　する人ぞ</span>
+        <span class="senryu-author">PN:松尾芭蕉界隈</span>
+      </h2>
+      <audio class="senryu-audio" controls preload="auto">
+        <source src="017_senryu.mp3" type="audio/mpeg" />
+      </audio>
+    </section>
 
-senryuData.forEach(([no,award,text,author])=>{
-  container.insertAdjacentHTML("beforeend",`
-  <section class="piece">
-    <h2 class="senryu-block">
-      <img src="${no}_senryu_illust.png" class="senryu-illust" alt="">
-      <span class="award-title">${award}</span>
-      <span class="senryu-main">${text}</span>
-      <span class="senryu-author">PN:${author}</span>
-    </h2>
-    <audio class="senryu-audio" controls preload="auto">
-      <source src="${no}_senryu.mp3" type="audio/mpeg">
-    </audio>
-  </section>
-  `);
-});
-</script>
-
-</div>
-  <p>再生ボタンを押すと音が流れます。</p>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("audio-001");
-    const illust = document.querySelector(".senryu-illust");
-    const senryuMain = document.querySelector(".senryu-main");
-
-    if (!audio || !illust || !senryuMain) return;
-
-    audio.addEventListener("play", () => {
-      illust.classList.add("is-playing");
-      senryuMain.classList.add("is-playing");
-    });
-
-    audio.addEventListener("pause", () => {
-      illust.classList.remove("is-playing");
-      senryuMain.classList.remove("is-playing");
-    });
-
-    audio.addEventListener("ended", () => {
-      illust.classList.remove("is-playing");
-      senryuMain.classList.remove("is-playing");
-    });
-  });
-</script>
+    <p class="note">再生ボタンを押すと音が流れる</p>
   </div>
+
+  <!-- 再生中演出（001〜017 全対応） -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const pieces = Array.from(document.querySelectorAll(".piece"));
+
+      const clearAll = () => {
+        pieces.forEach(p => {
+          p.querySelector(".senryu-illust")?.classList.remove("is-playing");
+          p.querySelector(".senryu-main")?.classList.remove("is-playing");
+        });
+      };
+
+      pieces.forEach(piece => {
+        const audio = piece.querySelector(".senryu-audio");
+        const illust = piece.querySelector(".senryu-illust");
+        const main = piece.querySelector(".senryu-main");
+        if (!audio || !illust || !main) return;
+
+        audio.addEventListener("play", () => {
+          clearAll();
+          illust.classList.add("is-playing");
+          main.classList.add("is-playing");
+        });
+
+        const off = () => {
+          illust.classList.remove("is-playing");
+          main.classList.remove("is-playing");
+        };
+
+        audio.addEventListener("pause", off);
+        audio.addEventListener("ended", off);
+      });
+    });
+  </script>
 </body>
 </html>
