@@ -1,108 +1,87 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>会議川柳 受賞作品</title>
-  <style>
-  body {
-    margin: 0;
-    font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>会議川柳 受賞作品</title>
 
-    background-image: url("senryu_background.png");
-    background-repeat: repeat; 
-    background-position: top left;
-    background-attachment: fixed;
-  }
+<style>
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background-image: url("senryu_background.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
 
 .wrapper {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  background: transparent;   /* ← 白を消す */
 }
 
-  h1 {
-    text-align: center;
-    margin-top: 0;
-  }
+h1 {
+  text-align: center;
+}
 
-  .senryu {
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-  }
+/* 共通ブロック */
+.piece {
+  margin-bottom: 40px;
+  text-align: center;
+}
 
-  .senryu-content {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+.senryu-block span {
+  display: block;
+}
 
-  .senryu-image {
-    width: 200px;
-    max-width: 100%;
-    border-radius: 10px;
-  }
+.award-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
 
+.senryu-main {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.senryu-main.is-playing {
+  color: #d94a1e;
+}
+
+.senryu-author {
+  font-size: 0.95em;
+}
+
+/* イラスト */
+.senryu-illust {
+  display: block;
+  width: 20%;
+  height: auto;
+  margin: 0 auto 12px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.senryu-illust.is-playing {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(30,111,217,0.6);
+}
+
+/* audio 中央 */
 audio {
   display: block;
   margin: 12px auto;
-  width: 390px;
-  max-width: 100%;
 }
-  .senryu-block span {
-  display: block;
-  }
-
-  .award-title {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 4px;
-    font-size: 0.80em;
-  }
-
-  .senryu-main {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
-
-  .senryu-author {
-    text-align: center;
-    font-size: 0.80em;
-  }
-
-  .senryu-illust {
-    display: block;
-    width: 20%;
-    height: auto;
-    margin: 0 auto 12px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.12); }
-    100% { transform: scale(1); }
-  }
-
-  .senryu-illust.is-playing {
-    animation: pulse 1.5s infinite;
-  }
-
-  .senryu-main.is-playing {
-    color: #d94a1e;
-    transition: color 0.3s ease;
-  }
-
 </style>
 </head>
+
 <body>
-  <div class="wrapper">
-    <h1>会議川柳 受賞作品</h1>
+<div class="wrapper">
+<h1>会議川柳 受賞作品</h1>
+<script>
+const senryuData = [
   <!-- 001 -->
 　<h2 class="senryu-block">
   　  <img
@@ -231,7 +210,28 @@ audio {
   <audio controls preload="auto">
     <source src="017_senryu.mp3" type="audio/mpeg" />
   </audio>
+];
 
+const container = document.currentScript.parentElement;
+
+senryuData.forEach(([no,award,text,author])=>{
+  container.insertAdjacentHTML("beforeend",`
+  <section class="piece">
+    <h2 class="senryu-block">
+      <img src="${no}_senryu_illust.png" class="senryu-illust" alt="">
+      <span class="award-title">${award}</span>
+      <span class="senryu-main">${text}</span>
+      <span class="senryu-author">PN:${author}</span>
+    </h2>
+    <audio class="senryu-audio" controls preload="auto">
+      <source src="${no}_senryu.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+  `);
+});
+</script>
+
+</div>
   <p>再生ボタンを押すと音が流れます。</p>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
