@@ -27,20 +27,20 @@
     margin-top: 0;
   }
 
-  .seryu {
+  .senryu {
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
   }
 
-  .seryu-content {
+  .senryu-content {
     display: flex;
     gap: 16px;
     align-items: center;
     flex-wrap: wrap;
   }
 
-  .seryu-image {
+  .senryu-image {
     width: 200px;
     max-width: 100%;
     border-radius: 10px;
@@ -49,7 +49,7 @@
 audio {
   display: block;
   margin: 12px auto;
-  width: 260px;
+  width: 390px;
   max-width: 100%;
 }
   .senryu-block span {
@@ -60,6 +60,7 @@ audio {
     text-align: center;
     font-weight: bold;
     margin-bottom: 4px;
+    font-size: 0.80em;
   }
 
   .senryu-main {
@@ -102,7 +103,6 @@ audio {
 <body>
   <div class="wrapper">
     <h1>会議川柳 受賞作品</h1>
-
   <!-- 001 -->
 　<h2 class="senryu-block">
   　  <img
@@ -134,8 +134,17 @@ audio {
   </audio>
 
   <!-- 003 -->
-  <h2>優秀賞【特別アクション賞①】延長を　笑顔で断つは　締め名人　PN:業革のラーメンヲタ</h2>
-  <audio controls preload="auto">
+　<h2 class="senryu-block">
+  　  <img
+      src="003_senryu_illust.png"
+      alt="優秀賞【特別アクション賞①】延長を　笑顔で断つは　締め名人"
+      class="senryu-illust"
+    >
+    <span class="award-title">優秀賞【特別アクション賞①】
+  　<span class="senryu-main">延長を　笑顔で断つは　締め名人
+  　<span class="senryu-author">業革のラーメンヲタ
+　</h2>
+  <audio id="audio-001" controls preload="auto">
     <source src="003_senryu.mp3" type="audio/mpeg" />
   </audio>
 
