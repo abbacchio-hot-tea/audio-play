@@ -51,24 +51,24 @@
     width: 260px;
     max-width: 100%;
   }
-　.senryu-block span {
+  .senryu-block span {
   display: block;
-　}
+  }
 
-　.award-title {
+  .award-title {
   　font-weight: bold;
   　margin-bottom: 4px;
-　}
+  }
 
-　.senryu-main {
-  　text-align: center;
-  　font-weight: bold;
-  　margin-bottom: 4px;
-　}
+  .senryu-main {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
 
-　.senryu-author {
-  　font-size: 0.95em;
-　}
+  .senryu-author {
+    font-size: 0.95em;
+  }
 
   .senryu-illust {
     display: block;
@@ -79,15 +79,26 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+  }
+
   .senryu-illust.is-playing {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(30, 111, 217, 0.6);
+    animation: pulse 1.5s infinite;
+  }
+
+  .senryu-main.is-playing {
+    color: #d94a1e;
+    transition: color 0.3s ease;
   }
 
 </style>
 </head>
 <body>
-  <h1>会議川柳 受賞作品</h1>
+  <div class="wrapper">
+    <h1>会議川柳 受賞作品</h1>
 
   <!-- 001 -->
 　<h2 class="senryu-block">
@@ -205,17 +216,30 @@
   </audio>
 
   <p>再生ボタンを押すと音が流れます。</p>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const audio = document.getElementById("audio-001");
-      const illust = document.querySelector(".senryu-illust");
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("audio-001");
+    const illust = document.querySelector(".senryu-illust");
+    const senryuMain = document.querySelector(".senryu-main");
 
-      if (!audio || !illust) return;
+    if (!audio || !illust || !senryuMain) return;
 
-      audio.addEventListener("play", () => illust.classList.add("is-playing"));
-      audio.addEventListener("pause", () => illust.classList.remove("is-playing"));
-      audio.addEventListener("ended", () => illust.classList.remove("is-playing"));
+    audio.addEventListener("play", () => {
+      illust.classList.add("is-playing");
+      senryuMain.classList.add("is-playing");
     });
-  </script>
+
+    audio.addEventListener("pause", () => {
+      illust.classList.remove("is-playing");
+      senryuMain.classList.remove("is-playing");
+    });
+
+    audio.addEventListener("ended", () => {
+      illust.classList.remove("is-playing");
+      senryuMain.classList.remove("is-playing");
+    });
+  });
+</script>
+  </div>
 </body>
 </html>
