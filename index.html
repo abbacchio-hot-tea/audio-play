@@ -15,13 +15,12 @@
     background-attachment: fixed;
   }
 
-  .wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 10px;
-  }
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: transparent;   /* ← 白を消す */
+}
 
   h1 {
     text-align: center;
@@ -121,11 +120,16 @@ audio {
 
   <!-- 002 -->
 　<h2 class="senryu-block">
-  　<span class="award-title">大賞【働き方改革賞】</span>
-  　<span class="senryu-main">この会議　私必要？　地蔵時間</span>
-  　<span class="senryu-author">伊藤純</span></span>
+  　  <img
+      src="002_senryu_illust.png"
+      alt="大賞【働き方改革賞】この会議　私必要？　地蔵時間"
+      class="senryu-illust"
+    >
+    <span class="award-title">大賞【働き方改革賞】
+  　<span class="senryu-main">この会議　私必要？　地蔵時間
+  　<span class="senryu-author">伊藤純
 　</h2>
-  <audio controls preload="auto">
+  <audio id="audio-002" controls preload="auto">
     <source src="002_senryu.mp3" type="audio/mpeg" />
   </audio>
 
