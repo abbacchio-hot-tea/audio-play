@@ -77,8 +77,31 @@
     border-radius: 8px;
   }
 
+  .senryu-illust.is-playing {
+    transform: scale(1.1); /* 少し拡大 */
+    box-shadow: 0 0 20px rgba(30, 111, 217, 0.6); /* 青い光 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
 </style>
 </head>
+  <script>
+    const audio = document.getElementById("audio-001");
+    const illust = document.querySelector(".senryu-illust");
+
+    audio.addEventListener("play", () => {
+      illust.classList.add("is-playing");
+    });
+
+    audio.addEventListener("pause", () => {
+      illust.classList.remove("is-playing");
+    });
+
+    audio.addEventListener("ended", () => {
+      illust.classList.remove("is-playing");
+    });
+  </script>
+
 <body>
   <h1>会議川柳 受賞作品</h1>
 
@@ -93,7 +116,7 @@
   　<span class="senryu-main">それいいね　その一声が　場を変える</span>
   　<span class="senryu-author">PN:<span class="author-name">Pay</span></span>
 　</h2>
-  <audio controls preload="auto">
+  <audio id="audio-001" controls preload="auto">
     <source src="001_senryu.mp3" type="audio/mpeg" />
   </audio>
 
